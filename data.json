@@ -1,0 +1,42 @@
+{
+    "deals": [{
+        "key": 148525931698,
+        "value": {
+            "id": 148525931698,
+            "description": "",
+            "details_id": "ChevroletCobalt2005",
+            "unique_title": "ChevroletCobalt20051485259316",
+            "year": "2005",
+            "brand": "Chevrolet",
+            "model": "Cobalt",
+            "price": "5583",
+            "image": "https:\/\/bstavroulakis.com\/pluralsight\/courses\/progressive-web-apps\/service\/car-image.php?title=ChevroletCobalt2005"
+        }
+    }, {
+        "key": 148525931697,
+        "value": {
+            "id": 148525931697,
+            "description": "",
+            "details_id": "BuickReatta1988",
+            "unique_title": "BuickReatta19881485259316",
+            "year": "1988",
+            "brand": "Buick",
+            "model": "Reatta",
+            "price": "14478",
+            "image": "https:\/\/bstavroulakis.com\/pluralsight\/courses\/progressive-web-apps\/service\/car-image.php?title=BuickReatta1988"
+        }
+    }, {
+        "key": 148525931696,
+        "value": {
+            "id": 148525931696,
+            "description": "",
+            "details_id": "Pontiac60001983",
+            "unique_title": "Pontiac600019831485259316",
+            "year": "1983",
+            "brand": "Pontiac",
+            "model": "6000",
+            "price": "6860",
+            "image": "https:\/\/bstavroulakis.com\/pluralsight\/courses\/progressive-web-apps\/service\/car-image.php?title=Pontiac60001983"
+        }
+    }]
+}
