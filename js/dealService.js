@@ -1,4 +1,4 @@
-define(['./template.js'], function (template) {
+define(['./template.js', './clientStorage.js'], function (template, clientStorage) {
     var apiUrlPath = 'https://bstavroulakis.com/pluralsight/courses/progressive-web-apps/service/';
     var apiUrlFile = apiUrlPath + 'latest-deals.php';
     //var apiUrlFile = '../data.json';
@@ -8,7 +8,11 @@ define(['./template.js'], function (template) {
             .then(function (response) {
                 return response.json();
             }).then(function (data) {
-                template.appendDeals(data);                
+                //se alterar o serviço, por favor, altere aqui o valor ;)
+                clientStorage.addDeals(data.cars)
+                .then(function(){
+                    template.appendDeals(data.cars);
+                });                
             })
 
     }

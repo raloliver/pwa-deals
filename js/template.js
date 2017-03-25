@@ -12,8 +12,8 @@ define([], function () {
     function appendDeals(deals) {
         document.querySelector('#splash-screen').innerHTML = "";
         var cardHTML = "";
-         for (var i = 0; i < deals.cars.length; i++) {
-            cardHTML += generateDealCard(deals.cars[i].value);
+         for (var i = 0; i < deals.length; i++) {
+            cardHTML += generateDealCard(deals[i].value);
         }
         document.querySelector('.mdl-grid').insertAdjacentHTML('beforeend', cardHTML);
     }
