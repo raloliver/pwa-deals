@@ -4,6 +4,7 @@ define([], function () {
         var template = document.querySelector('#deal-card').innerHTML;
         var title = deal.brand + ' ' + deal.model + ' ' + deal.year;
         template = template.replace('{{title}}', title);
+        template = template.replace('{{details_id}}', deal.details_id);
         template = template.replace('{{image}}', deal.image);
         template = template.replace('{{price}}', deal.price);
         return template;

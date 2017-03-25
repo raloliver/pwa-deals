@@ -48,7 +48,7 @@
                 <span class="mdl-layout-title">Ofertas do Dia</span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <button id="refresh" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent mdl-js-ripple-effect">
+                    <button onclick="location.reload()" id="refresh" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent mdl-js-ripple-effect">
                         <i class="mdi mdi-refresh mdi-24px" aria-hidden="true"></i>
                         <div data-mdl-for="refresh" class="mdl-tooltip mdl-tooltip--left">Novas Ofertas</div>
                     </button>
@@ -63,7 +63,7 @@
                 <!--content here-->
             </div>
             <div class="flex-center">
-                <button id="more" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
+                <button onclick="pageEvents.loadMore()" id="more" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
                     <i class="mdi mdi-dots-horizontal mdi-24px" aria-hidden="true"></i>
                     <div data-mdl-for="more" class="mdl-tooltip">Mais Ofertas</div>
                 </button>
@@ -71,7 +71,7 @@
         </main>
     </div>
     <script id="deal-card" type="text/template">
-        <div class="mdl-card mdl-cell mdl-cell--4 mdl-cell--4-col mdl-shadow--6dp" style="background-image: url('{{image}}')">
+        <div onclick="pageEvents.loadDealPage('{{details_id}}')" class="mdl-card mdl-cell mdl-cell--4 mdl-cell--4-col mdl-shadow--6dp" style="background-image: url('{{image}}')">
             <div class="mdl-card__title">
                 <span class="mdl-card__title-text">{{title}} (${{price}})</span>
             </div>
