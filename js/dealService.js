@@ -4,10 +4,10 @@ define(['./template.js', './clientStorage.js'], function (template, clientStorag
     //var apiUrlFile = '../data.json';
     var apiUrlDeal = apiUrlPath + 'car.php?carId=';
 
-    function seeMoreDeals() {        
-        fetchPromise()        
+    function seeMoreDeals() {
+        fetchPromise()
             .then(function (status) {
-                document.querySelector("#connection-status").innerHTML = status; 
+                document.querySelector("#connection-status").innerHTML = status;
                 //loadMore();
             })
     }
@@ -21,8 +21,9 @@ define(['./template.js', './clientStorage.js'], function (template, clientStorag
                     //se alterar o serviço, por favor, altere aqui o valor
                     clientStorage.addDeals(data.cars)
                         .then(function () {
+                            data.cars.forEach(preCache);
                             template.appendDeals(data.cars);
-                            resolve('Internet funcionando.');
+                            resolve('Internet funcionando.');                            
                         });
                 }).catch(function () {
                     resolve('Falha a conexão. Por favor, verifique a sua internet.')
@@ -43,6 +44,21 @@ define(['./template.js', './clientStorage.js'], function (template, clientStorag
                 console.log(data);
                 console.error('Não foi possível encontrar essa oferta.');
             });
+    }
+
+    function preCache(deal) {
+        if ('serviceWorker' in navigator) {
+            var dealDetailsUrl = apiUrlDeal + deal.value.details_id;
+            window.caches.open('dealPreCachePagesV1')
+                .then(function (cache) {
+                    cache.match(dealDetailsUrl)
+                        .then(function (response) {
+                            if (!response) {
+                                cache.add(new Request(dealDetailsUrl));
+                            }
+                        })
+                })
+        }
     }
 
     function loadMore() {
