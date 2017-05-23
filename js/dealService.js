@@ -49,7 +49,7 @@ define(['./template.js', './clientStorage.js'], function (template, clientStorag
     function preCache(deal) {
         if ('serviceWorker' in navigator) {
             var dealDetailsUrl = apiUrlDeal + deal.value.details_id;
-            window.caches.open('dealPreCachePagesV1')
+            window.caches.open('pwaPreCachePagesV0')
                 .then(function (cache) {
                     cache.match(dealDetailsUrl)
                         .then(function (response) {
